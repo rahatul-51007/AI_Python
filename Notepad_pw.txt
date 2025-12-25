@@ -1,0 +1,579 @@
+#1st lab
+import math
+import random
+print(math.sqrt(100))
+##list in python
+L1=[10,20,'a',40]
+L1.append(100)
+print(L1)
+print(type(L1))
+s={10,20,20}
+print (s)
+print(len(s))
+T=(10,100,20,200)
+print(T[-1])
+print(T[1:3])
+print(range(5))
+for i in range(5):
+  print(i,end='.')
+  print("I")
+L=[10,21,30,40,50]
+for i in range(len(L)):
+  #print(L[i])
+  if L[i]%2==0:
+    print(L[i])
+for i in range(100):
+  L.append(i)
+
+for i in range(len(L)):
+  print(L[i])
+n=1000
+for i in range(n):
+  L.append(random.randint(1,2000))
+
+for i in range(len(L)):
+  print(L[i])
+  
+student={"name":"Rahatul",
+"cgpa":4,
+}
+print(student["name"])
+
+/////////////////////////////////// 2nd lab
+a=10
+b=20
+print(a>b)
+print(a>=b)
+print(a<b)
+print(a<=b)
+print(a==b)
+print(a!=b)
+
+a=10
+b=20
+c=30
+print((a>=b) & (a<c))
+print((a>=b) and (a<c))
+print((a>=b) | (a<c))
+print((a>=b) or (a<c))
+p=True
+print(not p)
+
+
+age=10
+if age<18:
+    print("Not adult")
+    print("I am happy")
+else:
+    print("adult")
+    print("I am responsible")
+
+age=61
+if age<18:
+    print("Not adult")
+    print("I am happy")
+elif age>=18 and age<=60:
+    print("adult")
+    print("I am responsible")
+else:
+    print("I am older")
+    print("I am retired")
+
+List=[10,20,30,40,50]
+#set operation
+p= 10 in List
+print(p)
+
+List=[10,20,30,40,50]
+#set operation
+p= 100  not in List
+print(p)
+
+List=[10,20,30,40,50]
+#set operation
+p= 100 not in List
+if p:
+    List.append(100)
+print(List)
+#membership cheque
+
+for i in range(10):
+    print(i,end="\n")
+
+for i in range(2,10):
+    print(i,end=" ")
+
+for i in range(5,10,2):
+    print(i,end=" ")
+
+for i in range(10,2,-2):
+    print(i,end=" ")
+
+List=[10,20,30,40,50]
+print(List[0:3])
+print(List[:3])
+print(List[-1])
+print(List[2:])
+print(List[2:3])
+
+for i in range(10):
+    if i==5:
+        break    
+    print(i,end=" ")
+
+for i in range(10):
+    if i==5:
+        continue    
+    print(i,end=" ")
+
+List=[]
+for i in range(1,101):
+    if i%10==0:
+        continue
+    List.append(i)
+print(List)
+
+#Exercise
+List=[10,20,30,40,50,60,70,80,90]
+
+#right shift 3
+
+List=[0,0,0,10,20,30,40,50,60]
+
+#Left shift 3
+List=[40,50,60,70,80,90,0,0,0]
+
+////////////////////////////////// 3rd lab
+#f(x)=x^2+2x
+def f(x):
+    return x**2+2*x
+
+print(f(2.2))
+
+def greet(name):
+    return "welcome "+ name
+
+print(greet("Richard")) #user define function
+////////
+import random
+def generateNumber(n):
+    l=[]
+    for i in range(n):
+        l.append(random.randint(1,100))
+    return l
+list= generateNumber(10)
+print(list)
+///////
+#list inside list is called matrix
+m=[
+  [10,20,30],
+    [40,50,60]
+] 
+for row in m:
+    print(row)
+
+//////
+row=4
+column =3
+m=[]
+for j in range (row):
+    r=[]
+    for i in range(column):
+        r.append(0)
+    m.append(r)
+
+for i in m:
+    print(i)
+print(m) #list of list
+
+///////
+
+def createMatrix(row,column):
+    m=[]
+    for j in range (row):
+        r=[]
+        for i in range(column):
+            r.append(0)
+        m.append(r)
+    return m
+m1= createMatrix(2,4)
+print(m1)
+///////
+f=open("1.txt","r")
+print (f.read())
+
+//////
+f=open("1.txt","r")
+print (f.readline())
+
+//////
+
+# create 1.text
+f=open("1.txt","r")
+vertex_edges=print (f.readline())
+vertex_edges1=vertex_edges.split()
+vertex=int(vertex_edges1[0])
+edges=int(vertex_edges1[1])
+
+for i in range(edges):
+    e=f.readline()
+    e1=e.split()
+    u=int(e1[0])
+    v=int(e1[1])
+    print(u,v)
+
+////////
+
+f=open("1.txt","r")
+vertex_edges=f.readline()
+vertex_edges1=vertex_edges.split()
+vertex=int(vertex_edges1[0])
+edges=int(vertex_edges1[1])
+
+for i in range(edges):
+    e=f.readline()
+    e1=e.split()
+    u=int(e1[0])
+    v=int(e1[1])
+    print(u,v)
+
+
+#Lab performance 
+#adjacency metrix of a graph
+def createMatrix(row,column):
+    m=[]
+    for j in range (row):
+        r=[]
+        for i in range(column):
+            r.append(0)
+        m.append(r)
+    return m
+
+f=open("1.txt","r")
+vertex_edges=f.readline()
+vertex_edges1=vertex_edges.split()
+vertex=int(vertex_edges1[0])
+edges=int(vertex_edges1[1])
+
+Matrix=createMatrix(vertex,vertex)
+print(Matrix)
+for i in range(edges):
+    e=f.readline()
+    e1=e.split()
+    u=int(e1[0])
+    v=int(e1[1])
+    #print(u,v)
+    Matrix[u][v]=1
+
+for row in Matrix:
+    print(row)
+
+
+#undirected
+def createMatrix(row,column):
+    m=[]
+    for j in range (row):
+        r=[]
+        for i in range(column):
+            r.append(0)
+        m.append(r)
+    return m
+
+f=open("2.txt","r")
+vertex_edges=f.readline()
+vertex_edges1=vertex_edges.split()
+vertex=int(vertex_edges1[0])
+edges=int(vertex_edges1[1])
+
+Matrix=createMatrix(vertex,vertex)
+print(Matrix)
+for i in range(edges):
+    e=f.readline()
+    e1=e.split()
+    u=int(e1[0])
+    v=int(e1[1])
+    #print(u,v)
+    Matrix[u][v]=1
+    matrix[v][u]=1
+
+for row in Matrix:
+    print(row)
+
+//////////////////4th lab
+def createMatrix(n):
+    m=[]
+    for j in range(n):
+        r=[]
+        for i in range (n):
+            r.append(0)
+        m.append(r)
+    return m
+for i in createMatrix(5):
+    print(i)
+
+
+def createMatrix(n):
+    m=[]
+    for j in range(n):
+        r=[]
+        for i in range (n):
+            r.append(0)
+        m.append(r)
+    return m
+print(createMatrix(4))
+
+
+def createMatrix(n):
+    m=[]
+    for j in range(n):
+        r=[]
+        for i in range (n):
+            r.append(0)
+        m.append(r)
+    return m
+M= createMatrix(10)
+for i in M:
+    print(i)
+
+///////////////////////////////Lab5(Dictonary)(key value pair)
+student={
+    1907:"Richard",
+    2013:"Jonathon"
+}
+print(student)
+
+/////
+car={
+    "BMW":["Red","White","Black"],
+    "Toyota":["Red","White"]
+}
+print(car)
+
+car["Tesla"]=["Ashe","White"]
+print(car)
+////tuple
+t=(10,20,30,40)
+print(t)
+print(t[2])
+t[2]=300//not changable but list changable
+
+
+
+//Length
+
+
+//set
+s={10,10,20,100,30,40,40}
+print(s)
+print(len(s))
+//dictonary used list
+
+adj_List={}
+n=6
+for i in range(n):
+    adj_List[i]=[]
+
+print(adj_List)
+/////
+
+adj_List=[]
+n=6
+for i in range(n):
+    adj_List[i]=[]
+'''
+for k in adj_List.keys():
+    print(k)
+
+for v in adj_List.values():
+    print(k)
+''' # comment
+for k,v in adj_List.items():
+    print(str(k)+": "+str(v))
+\\\\\\\\\\\\\\\\
+adj_List={}
+n=6
+for i in range(n):
+    adj_List[i]=[]
+
+print(adj_List)
+
+
+///////////////////////
+adj_List={}
+n=6
+for i in range(n):
+    adj_List[i]=[]
+
+for k in adj_List.keys():
+    print(k)
+
+for v in adj_List.values():
+    print(k)
+
+for k,v in adj_List.items():
+    print(str(k)+": "+str(v))
+
+
+///////// function and ad
+def createAdjList(n):
+    adj_List={}
+
+    for i in range(n):
+        adj_List[i]=[]
+    return adj_List
+
+def printList(adj_List):
+    for k,v in adj_List.items():
+        print(str(k)+": "+str(v))
+
+f=open("1.txt","r")
+vertex_edgef=f.readline()
+v_e=vertex_edgef.split()
+vertex=int(v_e[0])
+edge=int(v_e[1])
+print(vertex)
+print(edge)
+
+/////////////////////
+
+def createAdjacencyList(n):
+    adj_List={}
+
+    for i in range(n):
+        adj_List[i]=[]
+    return adj_List
+
+def printList(adj_List):
+    for k,v in adj_List.items():
+        print(str(k)+": "+str(v))
+
+f=open("1.txt","r")
+vertex_edgef=f.readline()
+v_e=vertex_edgef.split()
+vertex=int(v_e[0])
+edge=int(v_e[1])
+print(vertex)
+print(edge)
+
+AdjacencyList=createAdjacencyList(vertex)
+printList(AdjacencyList)
+
+for i in range(edge):
+    u_v=f.readline()
+    print(u_v)
+    u_v_split=u_v.split()
+    print(u_v_split)
+    u=int(u_v_split[0])
+    v=int(u_v_split[1])
+    print(u,v)
+    AdjacencyList[u].append(v)
+
+printList(AdjacencyList)
+
+
+/////////////////////////////////
+def createAdjacencyList(n):
+    adj_List={}
+
+    for i in range(n):
+        adj_List[i]=[]
+    return adj_List
+
+def printList(adj_List):
+    for k,v in adj_List.items():
+        print(str(k)+": "+str(v))
+
+f=open("1.txt","r")
+vertex_edgef=f.readline()
+v_e=vertex_edgef.split()
+vertex=int(v_e[0])
+edge=int(v_e[1])
+print(vertex)
+print(edge)
+
+AdjacencyList=createAdjacencyList(vertex)
+printList(AdjacencyList)
+
+for i in range(edge):
+    u_v=f.readline()
+    print(u_v)
+    u_v_split=u_v.split()
+    print(u_v_split)
+    u=int(u_v_split[0])
+    v=int(u_v_split[1])
+    print(u,v)
+    AdjacencyList[u].append(v)
+    AdjacencyList[v].append(u) #if undirected
+
+printList(AdjacencyList)
+///////////////////////////////////////////////////////////////////////
+Lab exam:
+def createMatrix(n):
+    m=[]
+    for j in range(n):
+        r=[]
+        for i in range(n):
+            if(i==j):
+                r.append(0)
+            else:
+                r.append(-1)
+        m.append(r)
+
+    return m
+
+def printMatrix(M):
+    for i in M:
+        print(i)
+    print("\n")
+    
+f=open("1.txt","r")
+vertex_edges=f.readline()
+vertex_edges1=vertex_edges.split()
+vertex=int(vertex_edges1[0])
+edges=int(vertex_edges1[1])
+
+
+Matrix=createMatrix(vertex)
+printMatrix(Matrix)
+
+for i in range(edges):
+    e = f.readline()
+    e1=e.split()
+    u=int(e1[0])
+    v=int(e1[1])
+    w=int(e1[2])
+    Matrix[u][v]=w
+    for i in range(vertex):
+     Matrix[i][i]=0
+
+def findOutDeg(M,v):
+    count=0
+    for i in range(len(M[0])):
+        if  M[v][i]!=-1 and M[v][i]!=0:
+            count=count+1    
+
+    return count
+def findInDeg(M,v):
+    count=0
+    for i in range(len(M[0])):
+        if  M[i][v]!=-1 and M[i][v]!=0:
+            count=count+1    
+
+    return count        
+
+for row in Matrix:
+    print(row)
+
+print(findOutDeg(Matrix,2))
+print(findInDeg(Matrix,2))
+
+
+
+
+
+
+
+
+
+
+  
